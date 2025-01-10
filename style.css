@@ -1,0 +1,1103 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/* CSS Reset*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'josefin Sans', sans-serif;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+/*Global variable*/
+:root{
+    --mainColor: #9b51e0;
+    --bodyBgColor: #101010;
+    --boxBgColor: #333333;
+    --headingColor: WHITE;
+    --textColor: rgba(255, 255, 255, 0.35);
+    --border: 2px solid var(--mainColor);
+    --boxShadow: 0 0 20px #9B51E05F;
+}
+body{
+    background: var(--bodyBgColor);
+    color: var(--textColor);
+}
+h1, h2, h3{
+    color: var(--headingColor);
+}
+
+/* === Global Classes Start === */
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.25);
+    border: var(--border);
+    border-radius: 30px;
+    padding: 15px 30px 13px 30px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s;
+    z-index: 1;
+}
+.btn::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background-color: var(--mainColor);
+    transition: all 0.3s;
+}
+.btn:hover::before{
+    height: 100%;
+    z-index: -1;
+}
+.padding{
+    padding: 120px 5%;
+}
+/* === Global Classes END === */
+
+/* ================================*/
+
+/* === Header START === */
+header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 330px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 50px 30px;
+    transition: 0.4s;
+    overflow-y: auto;
+    z-index: 999;
+}
+header .dp{
+    text-align: center;
+    border-bottom: 2px dashed var(--mainColor);
+    padding-bottom: 20px;
+}
+header .dp img{
+    width: 130px;
+    border-radius: 50%;
+    box-shadow: 0 0 100px #9b51e09c;
+}
+header .dp h2{
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 25px;
+    letter-spacing: 1px;
+}
+header .dp p{
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 10px;
+    color: lightgray;
+}
+header nav ul li{
+    list-style: none;
+    margin: 25px 0;
+    padding: 2px 25px;
+    border-left: var(--border);
+}
+header nav ul li a{
+    display: inline-block;
+    color: var(--textColor);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.4s;
+}
+header nav ul li a:hover{
+    color: var(--mainColor);
+}
+header nav ul li .active{
+    color: var(--mainColor);
+}
+header .social-icon{
+    text-align: center;
+    border-top: 2px dashed var(--mainColor);
+    padding-top: 20px;
+}
+header .social-icon a{
+    display: inline-block;
+    color: var(--mainColor);
+    border: var(--border);
+    font-size: 17px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    transition: 0.4s;
+}
+header .social-icon a:hover{
+    background-color: var(--mainColor);
+    color: var(--headingColor);
+}
+/* Responsive Menu Button*/
+#MenuBtn{
+    z-index: 1000;
+    position: fixed;
+    right: 40px;
+    top: 40px;
+    color: white;
+    width: 45px;
+    height: 45px;
+    background-color: var(--mainColor);
+    text-align: center;
+    line-height: 46px;
+    font-size: 22px;
+    border-radius: 50%;
+    box-shadow: 0 0 50px #9b51e09c;
+    cursor: pointer;
+    display: none;
+}
+/* Responsive View */
+@media only screen and (max-width: 1100px){
+    #MenuBtn{
+        display: block;
+    }
+    header{
+        left: -350px;
+    }
+}
+.toggle-header header{
+    left: 0;
+}
+/* === Header END === */
+
+/* ==================================================== */
+
+/* MAIN SECTION START */
+main{
+   margin-left: 325px;
+   transition: 0.3s; 
+}
+@media only screen and (max-width: 1100px){
+    main{
+        margin-left: 0;
+    }
+}
+
+/* MAIN SECTION END */
+
+/* =================== */
+
+/* ==== Home Section START ==== */
+#home{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url(img/homebg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1;
+}
+#home::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/overlay.png);
+    background-color: #102334a7;
+    z-index: -1;
+}
+#home .home-row{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    margin-top: 50px;
+}
+#home .home-row h1{
+    font-size: 65px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+#home .home-row h2{
+    font-size: 45px;
+    font-weight: 250;
+    font-family: 'Brush Script MT', cursive;
+}
+#home .home-row p{
+    color: whitesmoke;
+    font-size: 45px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+#home .home-row .buttons{
+    margin-top: 20px;
+}
+#home .home-row .buttons a{
+    font-size: 18px;
+    border: 3px solid var(--mainColor);
+}
+/* Responsive View */
+@media only screen and (max-width: 700px){
+    #home{
+        height: auto;
+    }
+    #home .home-row h1{
+        font-size: 60px;
+    }
+    #home .home-row p{
+        font-size: 35px;
+        height: 80px;
+    }
+    #home .home-row .buttons{
+        margin-top: 0px;
+    }
+}
+/* ==== Home Section END ==== */
+
+/* ===============================================*/
+
+/* ==== About Section START ==== */
+
+/* we will use these classes globally*/
+.sub-title{
+    color: var(--mainColor);
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 300;
+    position: relative;
+    padding-left: 70px;
+    margin-bottom: 20px;
+}
+.sub-title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 40%;
+    width: 65px;
+    height: 1px;
+    background-color: var(--mainColor);
+}
+.title{
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+.sub-para{
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+#about .about-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+#about .about-row .img-col {
+    flex-basis: 30%;
+    position: relative;
+}
+
+#about .about-row .img-col img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: -10px 10px 50px rgba(0, 0, 0, 0.19);
+}
+
+#about .about-row .info-col {
+    flex-basis: 70%;
+}
+
+#about .about-row .info-col h2 {
+    font-size: 20px;
+    padding-bottom: 20px;
+    color: #f4e8cc;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+    gap: 20px; /* Add space between cards */
+}
+/*Python*/
+.card-python {
+    padding: 13px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #333; /* Adjust text color if needed */
+    min-height: 160px; /* Minimum height, expands if needed */
+    height: auto; /* Let the card expand dynamically */
+    overflow: visible; /* Show content if it grows */
+}
+
+.card-python:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    background-color: #6e6d6d56;
+}
+
+.card-python h4 {
+    color: #f4e8cc; /* Title - Black */
+    margin-bottom: 10px; /* Add spacing below heading */
+}
+
+.card-python p {
+    display: flex;
+    flex-wrap: wrap; /* Wrap content if space is less */
+    gap: 8px; /* Space between tags */
+    justify-content: flex-start; /* Align tags to the left */
+}
+
+.card-python p span {
+    background-color: #f4e8cc; /* Light grey background */
+    color: #333; /* Dark text */
+    padding: 5px 10px; /* Padding inside each tag */
+    border-radius: 15px; /* Rounded corners for tags */
+    font-size: 12px; /* Font size */
+    white-space: nowrap; /* Prevent breaking words */
+}
+
+/*SQL*/
+.card-sql {
+    padding: 13px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #333; /* Adjust text color if needed */
+    min-height: 160px; /* Minimum height, expands if needed */
+    height: auto; /* Let the card expand dynamically */
+    overflow: visible; /* Show content if it grows */
+}
+
+.card-sql:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    background-color: #6e6d6d56;
+}
+
+.card-sql h4 {
+    color: #f4e8cc; /* Title - Black */
+    margin-bottom: 10px; /* Add spacing below heading */
+}
+
+.card-sql p {
+    display: flex;
+    flex-wrap: wrap; /* Wrap content if space is less */
+    gap: 8px; /* Space between tags */
+    justify-content: flex-start; /* Align tags to the left */
+}
+
+.card-sql p span {
+    background-color: #f4e8cc; /* Light grey background */
+    color: #333; /* Dark text */
+    padding: 5px 10px; /* Padding inside each tag */
+    border-radius: 15px; /* Rounded corners for tags */
+    font-size: 12px; /* Font size */
+    white-space: nowrap; /* Prevent breaking words */
+}
+
+/*Data viz*/
+.card-viz {
+    padding: 13px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #333; /* Adjust text color if needed */
+    min-height: 160px; /* Minimum height, expands if needed */
+    height: auto; /* Let the card expand dynamically */
+    overflow: visible; /* Show content if it grows */
+}
+
+.card-viz:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    background-color: #6e6d6d56;
+}
+
+.card-viz h4 {
+    color: #f4e8cc; /* Title - Black */
+    margin-bottom: 10px; /* Add spacing below heading */
+}
+
+.card-viz p {
+    display: flex;
+    flex-wrap: wrap; /* Wrap content if space is less */
+    gap: 8px; /* Space between tags */
+    justify-content: flex-start; /* Align tags to the left */
+}
+
+.card-viz p span {
+    background-color: #f4e8cc; /* Light grey background */
+    color: #333; /* Dark text */
+    padding: 5px 10px; /* Padding inside each tag */
+    border-radius: 15px; /* Rounded corners for tags */
+    font-size: 12px; /* Font size */
+    white-space: nowrap; /* Prevent breaking words */
+}
+
+/*ds*/
+.card-ds {
+    padding: 13px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #333; /* Adjust text color if needed */
+    min-height: 160px; /* Minimum height, expands if needed */
+    height: auto; /* Let the card expand dynamically */
+    overflow: visible; /* Show content if it grows */
+}
+
+.card-ds:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    background-color: #6e6d6d56;
+}
+
+.card-ds h4 {
+    color: #9c2e51; /* Title - Black */
+    margin-bottom: 10px; /* Add spacing below heading */
+}
+
+.card-ds p {
+    display: flex;
+    flex-wrap: wrap; /* Wrap content if space is less */
+    gap: 8px; /* Space between tags */
+    justify-content: flex-start; /* Align tags to the left */
+}
+
+.card-ds p span {
+    background-color: #9c2e51;  /* Light grey background */
+    color: #fff; /* Dark text */
+    padding: 5px 10px; /* Padding inside each tag */
+    border-radius: 15px; /* Rounded corners for tags */
+    font-size: 12px; /* Font size */
+    white-space: nowrap; /* Prevent breaking words */
+}
+
+/*ML*/
+.card-ML {
+    padding: 13px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #333; /* Adjust text color if needed */
+    min-height: 160px; /* Minimum height, expands if needed */
+    height: auto; /* Let the card expand dynamically */
+    overflow: visible; /* Show content if it grows */
+}
+
+.card-ML:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    background-color: #6e6d6d56;
+}
+
+.card-ML h4 {
+    color: #9c2e51; /* Title - Black */
+    margin-bottom: 10px; /* Add spacing below heading */
+}
+
+.card-ML p {
+    display: flex;
+    flex-wrap: wrap; /* Wrap content if space is less */
+    gap: 8px; /* Space between tags */
+    justify-content: flex-start; /* Align tags to the left */
+}
+
+.card-ML p span {
+    background-color: #9c2e51;  /* Light grey background */
+    color: #fff; /* Dark text */
+    padding: 5px 10px; /* Padding inside each tag */
+    border-radius: 15px; /* Rounded corners for tags */
+    font-size: 12px; /* Font size */
+    white-space: nowrap; /* Prevent breaking words */
+}
+
+/*ens*/
+.card-ens {
+    padding: 13px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #333; /* Adjust text color if needed */
+    min-height: 160px; /* Minimum height, expands if needed */
+    height: auto; /* Let the card expand dynamically */
+    overflow: visible; /* Show content if it grows */
+}
+
+.card-ens:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    background-color: #6e6d6d56;
+}
+
+.card-ens h4 {
+    color: #9c2e51; /* Title - Black */
+    margin-bottom: 10px; /* Add spacing below heading */
+}
+
+.card-ens p {
+    display: flex;
+    flex-wrap: wrap; /* Wrap content if space is less */
+    gap: 8px; /* Space between tags */
+    justify-content: flex-start; /* Align tags to the left */
+}
+
+.card-ens p span {
+    background-color: #9c2e51;
+    color: #fff; 
+    padding: 5px 10px; /* Padding inside each tag */
+    border-radius: 15px; /* Rounded corners for tags */
+    font-size: 12px; /* Font size */
+    white-space: nowrap; /* Prevent breaking words */
+}
+
+/*ML foundations*/
+.card-mlf {
+    padding: 13px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #333; /* Adjust text color if needed */
+    min-height: 160px; /* Minimum height, expands if needed */
+    height: auto; /* Let the card expand dynamically */
+    overflow: visible; /* Show content if it grows */
+}
+
+.card-mlf:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    background-color: #6e6d6d56;
+}
+
+.card-mlf h4 {
+    color: #9646e7; /* Title - Black */
+    margin-bottom: 10px; /* Add spacing below heading */
+}
+
+.card-mlf p {
+    display: flex;
+    flex-wrap: wrap; /* Wrap content if space is less */
+    gap: 8px; /* Space between tags */
+    justify-content: flex-start; /* Align tags to the left */
+}
+
+.card-mlf p span {
+    background-color: #9646e7;  /* Light grey background */
+    color: #fff; /* Dark text */
+    padding: 5px 10px; /* Padding inside each tag */
+    border-radius: 15px; /* Rounded corners for tags */
+    font-size: 12px; /* Font size */
+    white-space: nowrap; /* Prevent breaking words */
+}
+
+/*sheets*/
+.card-sheets {
+    padding: 13px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #333; /* Adjust text color if needed */
+    min-height: 160px; /* Minimum height, expands if needed */
+    height: auto; /* Let the card expand dynamically */
+    overflow: visible; /* Show content if it grows */
+}
+
+.card-sheets:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    background-color: #6e6d6d56;
+}
+
+.card-sheets h4 {
+    color: #9646e7; /* Title - Black */
+    margin-bottom: 10px; /* Add spacing below heading */
+}
+
+.card-sheets p {
+    display: flex;
+    flex-wrap: wrap; /* Wrap content if space is less */
+    gap: 8px; /* Space between tags */
+    justify-content: flex-start; /* Align tags to the left */
+}
+
+.card-sheets p span {
+    background-color: #9646e7;  /* Light grey background */
+    color: #fff; /* Dark text */
+    padding: 5px 10px; /* Padding inside each tag */
+    border-radius: 15px; /* Rounded corners for tags */
+    font-size: 12px; /* Font size */
+    white-space: nowrap; /* Prevent breaking words */
+}
+
+/*mgmt & skills*/
+.card-mgm {
+    padding: 13px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #333; /* Adjust text color if needed */
+    min-height: 160px; /* Minimum height, expands if needed */
+    height: auto; /* Let the card expand dynamically */
+    overflow: visible; /* Show content if it grows */
+}
+
+.card-mgm:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+    background-color: #6e6d6d56;
+}
+
+.card-mgm h4 {
+    color: #9646e7; /* Title - Black */
+    margin-bottom: 10px; /* Add spacing below heading */
+}
+
+.card-mgm p {
+    display: flex;
+    flex-wrap: wrap; /* Wrap content if space is less */
+    gap: 8px; /* Space between tags */
+    justify-content: flex-start; /* Align tags to the left */
+}
+
+.card-mgm p span {
+    background-color: #9646e7;  /* Light grey background */
+    color: #fff; /* Dark text */
+    padding: 5px 10px; /* Padding inside each tag */
+    border-radius: 15px; /* Rounded corners for tags */
+    font-size: 12px; /* Font size */
+    white-space: nowrap; /* Prevent breaking words */
+}
+
+@media only screen and (max-width: 800px) {
+    #about .about-row {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    #about .about-row .img-col {
+        width: 50%;
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #about .about-row .img-col {
+        width: 80%;
+    }
+}
+
+/* Medium Screens (Tablets, etc.) */
+@media only screen and (max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+}
+
+/* Small Screens (Mobile Phones) */
+@media only screen and (max-width: 600px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* 1 column for small screens */
+    }
+}
+
+/* ====================================================== */
+
+/* ==== Experience Section START ==== */
+#education .education-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    justify-content: center;
+    align-items: center; /* Center items vertically */
+    min-height: auto;
+    padding-bottom: 5rem;
+}
+
+#education .education-row .education-column {
+    flex: 1 1 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally within each column */
+}
+
+#education .education-row .education-column .titles {
+    font-size: 2.5rem;
+    margin: 0 0 1.5rem 0;
+}
+
+#education .education-row .education-column .education-box {
+    border-left: .2rem solid var(--mainColor);
+}
+#education .education-row .education-column .education-box .education-content{
+    position: relative;
+    padding-left: 2rem;
+}
+#education .education-row .education-column .education-box .education-content::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1.1rem;
+    width: 2rem;
+    height: 2rem;
+    background: var(--mainColor);
+    border-radius: 50%;
+}
+#education .education-row .education-column .education-box .education-content .content{
+    position: relative;
+    padding: 1.5rem;
+    border: .2rem solid var(--mainColor);
+    border-radius: .6rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+#education .education-row .education-column .education-box .education-content .content::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--boxBgColor);
+    z-index: -1;
+    transition: .5s;
+}
+
+#education .education-row .education-column .education-box .education-content .content:hover::before{
+    width: 100%;
+}
+
+#education .education-row .education-column .education-box .education-content .content .year{
+    font-size: 1.2rem;
+    color: var(--mainColor);
+    padding-bottom: .5rem;
+}
+#education .education-row .education-column .education-box .education-content .content .year i{
+    padding-right: .5rem;
+}
+#education .education-row .education-column .education-box .education-content .content h3{
+    font-size: 1.5rem;
+}
+#education .education-row .education-column .education-box .education-content .content p{
+    font-size: 1.2rem;
+    padding-top: .5rem;
+    color: #f4e8cc;
+    line-height: 24px; 
+    font-size: 19px; 
+    font-weight: 300;
+}
+
+/* Adjusting margin for h3 in education and experience section */
+@media only screen and (max-width: 1350px) {
+    #education .education-row .education-column .education-box .education-content .content h3 {
+        margin-right: 0;
+    }
+}
+
+/* Adjusting grid layout for smaller screens */
+@media only screen and (max-width: 860px) {
+    #education .education-row {
+        grid-template-columns: 1fr; /* Change to a single column for smaller screens */
+    }
+
+    #education .education-row .education-column {
+        width: 100%; /* Make the column take full width */
+    }
+
+    #education .education-row .education-column .education-box .education-content .content h3 {
+        margin-right: 0; /* Reset margin for h3 */
+    }
+}
+
+/* Resetting margin for h3 for even smaller screens */
+@media only screen and (max-width: 630px) {
+    #education .education-row .education-column .education-box .education-content .content h3 {
+        margin-right: 0;
+    }
+}
+
+/* Further adjustments for very small screens like Samsung Galaxy S8+, iPad Mini, iPad Air, etc. */
+@media only screen and (max-width: 310px) {
+    #education .education-row {
+        grid-template-columns: 1fr; /* Change to a single column for very small screens */
+    }
+
+    #education .education-row .education-column {
+        width: 100%; /* Make the column take full width */
+    }
+}
+
+/* Fine-tuning for screens with a max-width of 306px */
+@media only screen and (max-width: 306px) {
+    #education .education-row .education-column .education-box .education-content .content h3 {
+        margin-right: 0; /* Reset margin for h3 */
+        font-size: 1rem; /* Adjust font size as needed */
+    }
+}
+/* ==== Experience Section END ==== */
+
+/* ====================================================== */
+
+/* Project Section Styles */
+#portfolio .projectmsg .msg p{
+    margin-top: 20px;
+    line-height: 25px;
+    font-size: 20px;
+    color:#eadf07;
+    font-weight: 300;
+}
+
+.project-card-link {
+    text-decoration: none;
+    color: inherit; /* Inherit text color to avoid styling issues */
+    display: block; /* Ensure the link covers the entire card */
+}
+
+/* Project Card Styling */
+.project-card {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #e5d7d7;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for the project card */
+.project-card:hover {
+    transform: translateY(-5px); /* Slight lift effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+/* Main Section (Image and Description Side by Side) */
+.project-main {
+    display: flex;
+    flex-direction: row; /* Side-by-side layout */
+    gap: 20px; /* Spacing between image and details */
+}
+
+/* Image Section */
+.project-image {
+    flex: 0 0 30%; /* 30% width for the image */
+}
+
+.project-image {
+    overflow: hidden; /* Ensure zoom effect doesn't exceed the image bounds */
+    border-radius: 10px;
+}
+
+.project-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+}
+
+/* Zoom effect on hover */
+.project-card:hover .project-image img {
+    transform: scale(1.1); /* Zoom in slightly */
+}
+
+
+/* Project Details */
+.project-details {
+    flex: 1; /* Take remaining space (70%) */
+}
+
+.project-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.project-description {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #393838;
+}
+
+/* Skills Used Section */
+.skills-used {
+    margin-top: 20px;
+    width: 100%; /* Full width of the card */
+}
+
+.skills-used p {
+    margin: 10px 0;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Skill Tags */
+.skills-used p span {
+    background-color: #9c2e51;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 12px;
+    white-space: nowrap;
+    margin: 5px;
+    display: inline-block;
+}
+
+/* Responsive Design: Stack layout on smaller screens */
+@media (max-width: 768px) {
+    .project-main {
+        flex-direction: column; /* Stack image above details */
+    }
+
+    .project-image {
+        margin-bottom: 20px; /* Add spacing below the image */
+    }
+}
+
+/* ====================================================== */
+
+/* ==== Achievement Section START ==== */
+#achive .achive-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+    margin-top: 20px;
+}
+#achive .achive-row .achive-box{
+    text-align: center;
+}
+#achive .achive-row .achive-box i{
+    font-size: 90px;
+    color: var(--boxBgColor);
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+#achive .achive-row .achive-box h2{
+    color: var(--mainColor);
+    font-weight: 300;
+    font-size: 60px;
+    margin: 5px 0;
+}
+#achive .achive-row .achive-box p{
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+/*Responsive View*/
+@media only screen and (max-width: 800px){
+    #achive .achive-row{
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 30px;
+    }
+}
+@media only screen and (max-width: 800px){
+    #achive .achive-row .achive-box i{
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+    #achive .achive-row .achive-box h2{
+        font-size: 30px;
+    }
+    #achive .achive-row .achive-box p{
+        font-size: 16px;
+    }
+}
+/* ==== Achievement Section END ==== */
+
+/* ====================================================== */
+
+/* ==== Contact Section START ==== */
+#contact {
+    position: relative;
+    overflow: hidden;
+}
+
+#contact .contact-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 30px;
+    margin-top: 50px;
+    justify-content: center;
+}
+
+#contact h3{
+    color: #f4e8cc;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#contact p{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 300;
+    color: #eadf07;
+    line-height: 20px;
+}
+
+#contact .contact-row .contact-box {
+    text-align: center;
+}
+
+#contact .contact-row .contact-box i {
+    font-size: 100px;
+    color: var(--boxBgColor);
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+#contact .contact-row .contact-box h2 {
+    color: var(--mainColor);
+    font-weight: 450;
+    font-size: 23px;
+    margin: 5px 0;
+}
+
+#contact .contact-row .contact-box p {
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: var(--textColor);
+}
+
+/* Responsive View */
+@media only screen and (max-width: 800px) {
+    #contact .contact-row {
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
+
+    #contact .contact-row .contact-box i {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+
+    #contact .contact-row .contact-box h2 {
+        font-size: 30px;
+    }
+
+    #contact .contact-row .contact-box p {
+        font-size: 16px;
+    }
+
+    #contact .resume-preview {
+        width: 100%; /* Adjust for full width in smaller screens */
+        position: relative;
+    }
+}
+/* ==== Contact Section END ==== */
+
+/* ====================================================== */
